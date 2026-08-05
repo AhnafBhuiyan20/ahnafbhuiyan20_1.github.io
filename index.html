@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeighborHelp</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7f5;
+            color: #26352f;
+        }
+
+        header {
+            background: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        header h2 {
+            margin: 0;
+            color: #2e7d55;
+        }
+
+        nav a {
+            margin-left: 20px;
+            color: #26352f;
+            text-decoration: none;
+        }
+
+        .hero {
+            padding: 80px 10%;
+            text-align: center;
+            background: #dff1e6;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        button {
+            padding: 12px 20px;
+            background: #2e7d55;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        section {
+            width: 85%;
+            margin: auto;
+            padding: 50px 0;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #ddd;
+        }
+
+        .card h3 {
+            color: #2e7d55;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 18px;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        footer {
+            background: #26352f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 750px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>NeighborHelp</h2>
+
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#requests">Requests</a>
+            <a href="#help">Ask for Help</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Neighbors Helping Neighbors</h1>
+
+        <p>
+            Ask for help with rent, lawn care, errands,
+            transportation, and other everyday needs.
+        </p>
+
+        <a href="#help">
+            <button>Request Help</button>
+        </a>
+    </div>
+
+    <section id="services">
+        <h2>Available Services</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>🏠 Rent Assistance</h3>
+                <p>Find information and support for housing expenses.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌱 Lawn Care</h3>
+                <p>Ask a neighbor for help mowing or cleaning your yard.</p>
+            </div>
+
+            <div class="card">
+                <h3>🛒 Errands</h3>
+                <p>Get help with groceries, prescriptions, or deliveries.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="requests">
+        <h2>Recent Requests</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Lawn Mowing Help</h3>
+                <p>I need help mowing my front lawn this Saturday.</p>
+                <button>Offer Help</button>
+            </div>
+
+            <div class="card">
+                <h3>Grocery Pickup</h3>
+                <p>I need someone to pick up a prepaid grocery order.</p>
+                <button>Offer Help</button>
+            </div>
+
+            <div class="card">
+                <h3>Moving Furniture</h3>
+                <p>I need help moving a small table upstairs.</p>
+                <button>Offer Help</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="help">
+        <h2>Ask for Help</h2>
+
+        <form>
+            <label>Request Title</label>
+            <input type="text" placeholder="Example: Help mowing my lawn">
+
+            <label>Category</label>
+            <select>
+                <option>Rent Assistance</option>
+                <option>Lawn Care</option>
+                <option>Errands</option>
+                <option>Transportation</option>
+                <option>Other</option>
+            </select>
+
+            <label>Description</label>
+            <textarea placeholder="Describe what you need help with"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2026 NeighborHelp | Building stronger communities</p>
+    </footer>
+
+</body>
+</html>
