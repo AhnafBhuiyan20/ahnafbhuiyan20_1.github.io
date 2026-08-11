@@ -42,6 +42,7 @@ def home():
 
     tasks = conn.execute("""
         SELECT * FROM requests
+        WHERE status = 'Open'
         ORDER BY id DESC
     """).fetchall()
 
