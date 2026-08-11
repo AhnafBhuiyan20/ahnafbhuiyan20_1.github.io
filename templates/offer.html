@@ -15,22 +15,15 @@
 
 </head>
 
-
 <body>
 
 
 <header>
 
-    <h2>
-        NeighborHelp
-    </h2>
+    <h2>NeighborHelp</h2>
 
     <nav>
-
-        <a href="/">
-            Home
-        </a>
-
+        <a href="/">Home</a>
     </nav>
 
 </header>
@@ -44,70 +37,47 @@
 
     <div class="confirmation">
 
-
-        <h2>
-            You're Helping!
-        </h2>
-
+        <h2>You're Helping!</h2>
 
         <div class="card">
-
 
             <h3>
                 {{ task["title"] }}
             </h3>
 
-
             <p>
                 {{ task["description"] }}
             </p>
 
-
             <h3>
-                Contact Information
+                Requester's Contact Information
             </h3>
 
-
             <p>
-
                 <strong>Name:</strong>
-
                 {{ task["requester_name"] }}
-
             </p>
 
-
             <p>
-
                 <strong>Email:</strong>
 
                 <a href="mailto:{{ task['requester_email'] }}">
-
                     {{ task["requester_email"] }}
-
                 </a>
-
             </p>
 
 
             {% if task["requester_phone"] %}
 
-
             <p>
-
                 <strong>Phone:</strong>
 
                 <a href="tel:{{ task['requester_phone'] }}">
-
                     {{ task["requester_phone"] }}
-
                 </a>
-
             </p>
 
-
             {% endif %}
-
 
         </div>
 
@@ -120,20 +90,16 @@
 
         </a>
 
-
     </div>
 
 
 {% else %}
 
 
-    <h2>
-        Offer Help
-    </h2>
+    <h2>Offer Help</h2>
 
 
     <div class="task-preview">
-
 
         <h3>
             {{ task["title"] }}
@@ -141,11 +107,8 @@
 
 
         <p>
-
             <strong>Category:</strong>
-
             {{ task["category"] }}
-
         </p>
 
 
@@ -155,35 +118,25 @@
 
 
         <p>
-
             <strong>Requested by:</strong>
-
             {{ task["requester_name"] }}
-
         </p>
-
 
     </div>
 
 
     <form method="POST">
 
-
-        <h3>
-            Your Contact Information
-        </h3>
+        <h3>Your Contact Information</h3>
 
 
         <p>
-            Your information will be saved with this request
-            so the requester can contact you.
+            Enter your information so the person requesting
+            help can contact you.
         </p>
 
 
-        <label>
-            Your Name
-        </label>
-
+        <label>Your Name</label>
 
         <input
             type="text"
@@ -192,10 +145,7 @@
         >
 
 
-        <label>
-            Email
-        </label>
-
+        <label>Email</label>
 
         <input
             type="email"
@@ -204,10 +154,7 @@
         >
 
 
-        <label>
-            Phone Number
-        </label>
-
+        <label>Phone Number</label>
 
         <input
             type="tel"
@@ -217,11 +164,8 @@
 
 
         <button type="submit">
-
             Confirm and Offer Help
-
         </button>
-
 
     </form>
 
@@ -230,7 +174,6 @@
 
 
 </section>
-
 
 </body>
 
