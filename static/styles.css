@@ -271,3 +271,34 @@ footer {
         font-size: 32px;
     }
 }
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+
+.contact-layout .card {
+    text-align: left;
+}
+
+
+.contact-layout .card h3 {
+    text-align: center;
+}
+
+
+.contact-layout a {
+    color: #2e7d55;
+}
+
+
+@media (max-width: 750px) {
+
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+}
