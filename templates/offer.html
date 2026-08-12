@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -12,11 +11,9 @@
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='styles.css') }}">
-
 </head>
 
 <body>
-
 
 <header>
 
@@ -31,63 +28,126 @@
 
 <section>
 
-
 {% if confirmed %}
-
 
     <div class="confirmation">
 
-        <h2>You're Helping!</h2>
+        <h2>Help Confirmed!</h2>
 
-        <div class="card">
+        <p>
+            You have accepted this request.
+            Below is the contact information for both people.
+        </p>
 
-            <h3>
+
+        <div class="contact-layout">
+
+
+            <div class="card">
+
+                <h3>Person Requesting Help</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    {{ task["requester_name"] }}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+
+                    <a href="mailto:{{ task['requester_email'] }}">
+                        {{ task["requester_email"] }}
+                    </a>
+                </p>
+
+                {% if task["requester_phone"] %}
+
+                <p>
+                    <strong>Phone:</strong>
+
+                    <a href="tel:{{ task['requester_phone'] }}">
+                        {{ task["requester_phone"] }}
+                    </a>
+                </p>
+
+                {% else %}
+
+                <p>
+                    <strong>Phone:</strong>
+                    Not provided
+                </p>
+
+                {% endif %}
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Person Offering Help</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    {{ task["helper_name"] }}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+
+                    <a href="mailto:{{ task['helper_email'] }}">
+                        {{ task["helper_email"] }}
+                    </a>
+                </p>
+
+                {% if task["helper_phone"] %}
+
+                <p>
+                    <strong>Phone:</strong>
+
+                    <a href="tel:{{ task['helper_phone'] }}">
+                        {{ task["helper_phone"] }}
+                    </a>
+                </p>
+
+                {% else %}
+
+                <p>
+                    <strong>Phone:</strong>
+                    Not provided
+                </p>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+
+        <div class="task-preview">
+
+            <h3>Task Information</h3>
+
+            <p>
+                <strong>Request:</strong>
                 {{ task["title"] }}
-            </h3>
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                {{ task["category"] }}
+            </p>
 
             <p>
                 {{ task["description"] }}
             </p>
 
-            <h3>
-                Requester's Contact Information
-            </h3>
-
-            <p>
-                <strong>Name:</strong>
-                {{ task["requester_name"] }}
-            </p>
-
-            <p>
-                <strong>Email:</strong>
-
-                <a href="mailto:{{ task['requester_email'] }}">
-                    {{ task["requester_email"] }}
-                </a>
-            </p>
-
-
-            {% if task["requester_phone"] %}
-
-            <p>
-                <strong>Phone:</strong>
-
-                <a href="tel:{{ task['requester_phone'] }}">
-                    {{ task["requester_phone"] }}
-                </a>
-            </p>
-
-            {% endif %}
-
         </div>
 
 
         <a href="/">
-
             <button>
                 Return Home
             </button>
-
         </a>
 
     </div>
@@ -105,17 +165,14 @@
             {{ task["title"] }}
         </h3>
 
-
         <p>
             <strong>Category:</strong>
             {{ task["category"] }}
         </p>
 
-
         <p>
             {{ task["description"] }}
         </p>
-
 
         <p>
             <strong>Requested by:</strong>
@@ -129,10 +186,8 @@
 
         <h3>Your Contact Information</h3>
 
-
         <p>
-            Enter your information so the person requesting
-            help can contact you.
+            Enter your information to accept this request.
         </p>
 
 
@@ -171,7 +226,6 @@
 
 
 {% endif %}
-
 
 </section>
 
